@@ -1,0 +1,659 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Merriweather+Sans:wght@300&display=swap");
+
+
+/*
+* NOTES :
+*         - en développement, plusieurs fichiers CSS sont préférables
+*         - en production, un seul fichier est plus rapide à charger (moins de requêtes HTTP)
+*
+* A FAIRE :
+*         - centrer le contenu des différentes sections
+*         - sur téléphone, saut de ligne + centrage pour "copyright..." (on ne voit pas la fin du mot "reserved")
+*         - qd on clique sur un truc du menu, faudrait qu'il se referme tt seul
+*         - développer les cases "projets" du portfolio pour pouvoir mettre des img, une description plus parlante et une petite animation ?
+*         - rajouter une case projet "portoflio 1.0" ?
+*/
+
+
+
+/*
+*****************************************************
+*****************************************************
+* GENERAL
+*
+*****************************************************
+*****************************************************
+*/
+
+:root {
+  /*https://colorhunt.co/palette/eff7d3cedcc3a7b99e535a3b*/
+  /*5E8B7E A7C4BC 2F5D62 FCF8E8*/
+  /*04293A 064663 041C32 F0E9D2*/
+  /*557571 AACDBE 100F0F 596E79*/
+  /*557571 AACDBE 596E79 F0ECE3*/
+  /*E2DCC8 0F3D3E 100F0F F1F1F1*/
+  --couleur1: #E2DCC8;
+  /*section 1-2*/
+  --couleur2: #0F3D3E;
+  /*section 1-2*/
+  --couleur3: #100F0F;
+  /*titre + fond du menu*/
+  --couleur4: #F1F1F1;
+  /*fond acceuil + petits cadres*/
+}
+
+/*General styling for structure*/
+body {
+  margin: 0;
+  font-family: "Merriweather Sans", sans-serif;
+  background-color: var(--couleur4);
+}
+
+h1 {
+  text-transform: uppercase;
+  padding-bottom: 0.5em;
+  font-size: 2em;
+  margin: 0em auto;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+p {
+  font-size: 1em;
+}
+
+
+
+/*
+*****************************************************
+*****************************************************
+* MENU
+*
+*****************************************************
+*****************************************************
+*/
+
+#menuArea {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+
+
+}
+
+input {
+  display: none;
+}
+
+.open {
+  background-color: var(--couleur3);
+  width: 24px;
+  height: 4px;
+  display: block;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  top: 8px;
+}
+
+.open:before {
+  content: "";
+  background-color: var(--couleur3);
+  width: 24px;
+  height: 4px;
+  display: block;
+  border-radius: 2px;
+  position: relative;
+  top: -8px;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.open:after {
+  content: "";
+  background-color: var(--couleur3);
+  width: 24px;
+  height: 4px;
+  display: block;
+  border-radius: 2px;
+  position: relative;
+  top: 4px;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.menuOpen {
+  width: 24px;
+  height: 20px;
+  display: block;
+  padding: 15px;
+  cursor: pointer;
+  float: right;
+}
+
+.menuOpen:hover .open:before {
+  top: -9px;
+}
+
+.menuOpen:hover .open:after {
+  top: 5px;
+}
+
+.menu {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(16, 15, 15, 0.9);
+}
+
+.menu label {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-size: 100%;
+  cursor: pointer;
+}
+
+.menu .menuContent {
+  position: relative;
+  top: 50%;
+  font-size: 54px;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-top: -170px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.menu ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+
+.menu ul li a:hover {
+  color: var(--couleur3);
+}
+
+.menu ul li:hover {
+  background: white;
+}
+
+.menuEffects {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.menuEffects ul {
+  transform: translateY(0%);
+  transition: all 0.5s;
+}
+
+#menuToggle:checked~.menuEffects {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s;
+}
+
+#menuToggle:checked~.menuEffects ul {
+  opacity: 1;
+}
+
+#menuToggle:checked~.menuOpen .open {
+  background-color: transparent;
+}
+
+#menuToggle:checked~.menuOpen .open:before {
+  content: "";
+  background-color: white;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#menuToggle:checked~.menuOpen .open:after {
+  content: "";
+  background-color: white;
+  transform: rotate(-45deg);
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#menuToggle:not(:checked)~.menuEffects ul {
+  transform: translateY(-30%);
+}
+
+
+
+/*
+*****************************************************
+*****************************************************
+* HEADER
+*
+*****************************************************
+*****************************************************
+*/
+
+@media (max-width: 482px) {
+  .sautDeLigne {
+    display: none !important;
+  }
+}
+
+.arrows {
+  width: 60px;
+  height: 72px;
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+  bottom: 20px;
+}
+
+.arrows path {
+  stroke: var(--couleur2);
+  fill: transparent;
+  stroke-width: 1px;
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0
+  }
+
+  40% {
+    opacity: 1
+  }
+
+  80% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 0
+  }
+}
+
+@-webkit-keyframes arrow
+
+/*Safari and Chrome*/
+  {
+  0% {
+    opacity: 0
+  }
+
+  40% {
+    opacity: 1
+  }
+
+  80% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 0
+  }
+}
+
+.arrows path.a1 {
+  animation-delay: -1s;
+  -webkit-animation-delay: -1s;
+  /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+  animation-delay: -0.5s;
+  -webkit-animation-delay: -0.5s;
+  /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {
+  animation-delay: 0s;
+  -webkit-animation-delay: 0s;
+  /* Safari 和 Chrome */
+}
+
+
+
+/*
+*****************************************************
+*****************************************************
+* SECTIONS :
+*            - COMPETENCES
+*            - FORMATIONS
+*            - EXPERIENCES PROFESSIONNELLES
+*****************************************************
+*****************************************************
+*/
+
+.container {
+  max-width: 1280px;
+  width: 95%;
+  margin: 0 auto;
+  color: var(--couleur3);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Merriweather", serif;
+  height: 100vh;
+}
+
+.scroll-container {
+  min-height: 450px;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.scroll-container:nth-of-type(2n) {
+  background-color: var(--couleur1);
+}
+
+.scroll-container:nth-of-type(2n+1) {
+  background-color: var(--couleur2);
+}
+
+.scroll-container:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+
+.scroll-element,
+.scroll-caption {
+  width: 50%;
+}
+
+.scroll-element {
+  min-height: 300px;
+  height: 100%;
+  background-color: var(--couleur4);
+  padding: 1em;
+  text-align: center;
+  border-radius: 40px;
+}
+
+.scroll-caption {
+  margin: 1rem;
+}
+
+/* if screen smaller than 600px */
+@media (max-width: 600px) {
+  .scroll-container {
+    height: 90vh;
+  }
+}
+
+/* if screen larger than 600px */
+@media (min-width: 600px) {
+  .scroll-container {
+    height: 50vh;
+  }
+}
+
+/* if screen larger than 900px */
+@media (min-width: 900px) {
+  .scroll-container {
+    height: 50vh;
+  }
+}
+
+@media screen and (max-width: 650px) {
+
+  .scroll-container,
+  .scroll-container:nth-of-type(even) {
+    flex-direction: column;
+    align-content: inherit;
+  }
+
+  .scroll-element {
+    height: 100%;
+  }
+
+  .scroll-element,
+  .scroll-caption {
+    width: 100%;
+  }
+}
+
+/**Styling scrollable elements*/
+
+.js-scroll {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.js-scroll.scrolled {
+  opacity: 1;
+}
+
+/*
+.scrolled.fade-in {
+  animation: fade-in 1s ease-in-out both;
+}
+*/
+
+.scrolled.fade-in-bottom {
+  animation: fade-in-bottom 1s ease-in-out both;
+}
+
+.scrolled.slide-left {
+  animation: slide-in-left 1s ease-in-out both;
+}
+
+.scrolled.slide-right {
+  animation: slide-in-right 1s ease-in-out both;
+}
+
+/* ----------------------------------------------
+ * ---------------------------------------------- */
+
+@keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/*
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+*/
+
+
+
+/*
+*****************************************************
+*****************************************************
+* SECTION "PORTFOLIO"
+*
+*****************************************************
+*****************************************************
+*/
+#portfolio p {
+  text-align: left;
+}
+
+section#portfolio {
+  padding: 1rem 1rem;
+  background-color: var(--couleur1);
+  text-align: center;
+}
+
+.projets-grid {
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+/* 2 columns if screen larger than 600px */
+@media (min-width: 600px) {
+  .projets-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 3 columns if screen larger than 900px */
+@media (min-width: 900px) {
+  .projets-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.projet {
+  background-color: var(--couleur4);
+  padding: 1em 0.5em;
+  border-radius: 40px;
+}
+
+.projet:hover {
+  transform: scale(1.05);
+}
+
+.button {
+  background-color: var(--couleur2);
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.button:hover {
+  background-color: var(--couleur1);
+  color: var(--couleur2);
+}
+
+#portfolio a {
+  text-decoration : none;
+}
+
+
+/*
+*****************************************************
+*****************************************************
+* FOOTER
+*
+*****************************************************
+*****************************************************
+*/
+
+footer#contact {
+  height: auto;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: var(--couleur2);
+}
+
+.footer-element {
+  margin: auto;
+  align-items: center;
+  background-color: var(--couleur4);
+  padding: 1em;
+  margin-bottom: 1.5em;
+  text-align: center;
+  border-radius: 40px;
+}
+
+
+
+/*
+*****************************************************
+*****************************************************
+* SECTION "COPYRIGHT"
+*
+*****************************************************
+*****************************************************
+*/
+
+#copyright {
+  position: relative;
+  background-color: var(--couleur2);
+  height: auto;
+  width: 100%;
+}
+
+.bottom {
+  margin-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: auto;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  background-color: var(--couleur2);
+}
