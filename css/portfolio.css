@@ -151,7 +151,7 @@ html {
     }*/
 
     .container-projet h1 {
-        font-size: 7vw;
+        font-size: 6.5vw;
         /* font-size: clamp(4em, 4.5em, 5em); */
     }
 
@@ -166,12 +166,12 @@ html {
     }
 
     .container-projet h1 {
-        font-size: 3vw;
+        font-size: 5vh;
         /*font-size: clamp(6em, 7em, 9em);*/
     }
 
     .container-projet p {
-        font-size: 1.5vw;
+        font-size: 2.6vh;
     }
 }
 
@@ -181,11 +181,11 @@ html {
     }
 
     .container-projet h1 {
-        font-size: 2.7vw;
+        font-size: 5vh;
         /*font-size: clamp(6em, 7em, 9em);*/
     }
 
     .container-projet p {
-        font-size: 1.5vw;
+        font-size: 2.6vh;
     }
 }
