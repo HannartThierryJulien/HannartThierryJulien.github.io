@@ -174,3 +174,18 @@ html {
         font-size: 1.5vw;
     }
 }
+
+@media (width >=1200px) {
+    .container-txt {
+        bottom: -3em;
+    }
+
+    .container-projet h1 {
+        font-size: 2.7vw;
+        /*font-size: clamp(6em, 7em, 9em);*/
+    }
+
+    .container-projet p {
+        font-size: 1.5vw;
+    }
+}

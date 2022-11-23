@@ -139,3 +139,14 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
         /*font-size: clamp(6em, 7em, 9em);*/
     }
 }
+
+@media (width >=1200px) {
+    .container-txt {
+        bottom: -3.5em;
+    }
+
+    .container-lien h1 {
+        font-size: 7vw;
+        /*font-size: clamp(6em, 7em, 9em);*/
+    }
+}
