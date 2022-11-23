@@ -15,10 +15,21 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
     --couleur2: #0F3D3E;
     --couleur3: #100F0F;
     --couleur4: #F1F1F1;
+    --font1: 'Nanum Myeongjo', serif;
 }
 
-.accueil {
-    background-color: var(--couleur1);
+body,
+html {
+    margin: 0;
+    width: 100%;
+}
+
+html {
+    background-color: var(--couleur2);
+}
+
+.projets {
+    background-color: var(--couleur2);
 }
 
 
@@ -34,9 +45,9 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
 }
 
 #navBarPerso a {
-    font-family: 'Nanum Myeongjo', serif;
-    background-color: var(--couleur1);
-    color: var(--couleur2) !important;
+    font-family: var(--font1);
+    background-color: var(--couleur2);
+    color: var(--couleur1) !important;
     text-transform: uppercase;
     font-weight: 900 !important;
     display: flex;
@@ -50,7 +61,7 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
     margin-left: 1rem;
     height: 2px;
     width: 100px;
-    background-color: var(--couleur2);
+    background-color: var(--couleur1);
 }
 
 
@@ -60,7 +71,7 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
 *********************/
 
 .container-txt {
-    color: var(--couleur2) !important;
+    color: var(--couleur1) !important;
 }
 
 /*https://www.w3docs.com/tools/code-editor/9940*/
@@ -71,7 +82,7 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
     bottom: 0;
     height: 50%;
     width: 0;
-    border-left: 2px solid var(--couleur2);
+    border-left: 2px solid var(--couleur1);
 }
 
 .txt-bottom-line:before {
@@ -81,46 +92,71 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
     bottom: 0;
     height: 0;
     width: 50%;
-    border-bottom: 2px solid var(--couleur2);
+    border-bottom: 2px solid var(--couleur1);
 }
 
 .container-txt h4 {
-    color: var(--couleur2) !important;
+    color: var(--couleur1) !important;
     text-transform: uppercase;
     font-weight: 550 !important;
 }
 
-.container-lien h1 a {
-    color: var(--couleur2) !important;
+.container-projet a h1 {
+    font-family: var(--font1);
+    color: var(--couleur1) !important;
     text-transform: uppercase;
     font-weight: 550 !important;
     padding-left: 0;
+    margin-bottom: 0;
 }
 
-.container-lien h1 a:hover {
-    color: var(--couleur2) !important;
+.container-projet a h1:hover {
+    color: var(--couleur1) !important;
     font-style: italic;
 }
 
-.container-lien h1 {
-    font-family: 'Nanum Myeongjo', serif;
+.container-projet p {
+    font-family: var(--font1);
+    color: var(--couleur1) !important;
+    padding-left: 1em;
+    margin-bottom: 0;
 }
 
 @media (width < 768px) {
-    .container-lien h1 {
-        font-size: 12vw;
+    .container-txt {
+        margin: 1em;
+    }
+
+    .container-txt h4 {
+        font-size: 7vw;
+    }
+
+    .container-txt p {
+        font-size: 2.5vw;
+    }
+
+    .container-projet h1 {
+        font-size: 6vw;
         /* font-size: clamp(3.5em, 3.5em, 5em); */
+    }
+
+    .container-projet p {
+        font-size: 2vw;
     }
 }
 
 @media (width >=768px) {
-    .container-txt {
-        bottom: -10em;
+    /*.container-txt {
+        bottom: -5em;
+    }*/
+
+    .container-projet h1 {
+        font-size: 7vw;
+        /* font-size: clamp(4em, 4.5em, 5em); */
     }
 
-    .container-lien h1 {
-        font-size: 8vw;
-        /* font-size: clamp(4em, 4.5em, 5em); */
+    .container-projet p {
+        font-size: 1.5vw;
     }
 }
 
@@ -129,8 +165,12 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
         bottom: -3.5em;
     }
 
-    .container-lien h1 {
-        font-size: 8vw;
+    .container-projet h1 {
+        font-size: 3vw;
         /*font-size: clamp(6em, 7em, 9em);*/
+    }
+
+    .container-projet p {
+        font-size: 1.5vw;
     }
 }
