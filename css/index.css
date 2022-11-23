@@ -6,7 +6,7 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
 */
 
 
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
 
 
 :root {
@@ -15,6 +15,7 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
     --couleur2: #0F3D3E;
     --couleur3: #100F0F;
     --couleur4: #F1F1F1;
+    --font1: "Palatino";
 }
 
 .accueil {
@@ -34,7 +35,7 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
 }
 
 #navBarPerso a {
-    font-family: 'Nanum Myeongjo', serif;
+    font-family: var(--font1);
     background-color: var(--couleur1);
     color: var(--couleur2) !important;
     text-transform: uppercase;
@@ -87,13 +88,13 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
 .container-txt h4 {
     color: var(--couleur2) !important;
     text-transform: uppercase;
-    font-weight: 550 !important;
+    
 }
 
 .container-lien h1 a {
     color: var(--couleur2) !important;
     text-transform: uppercase;
-    font-weight: 550 !important;
+    
     padding-left: 0;
 }
 
@@ -103,7 +104,7 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
 }
 
 .container-lien h1 {
-    font-family: 'Nanum Myeongjo', serif;
+    font-family: var(--font1);
 }
 
 @media (width < 768px) {

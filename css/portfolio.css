@@ -6,7 +6,7 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
 */
 
 
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
 
 
 :root {
@@ -15,7 +15,7 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
     --couleur2: #0F3D3E;
     --couleur3: #100F0F;
     --couleur4: #F1F1F1;
-    --font1: 'Nanum Myeongjo', serif;
+    --font1: "Palatino";
 }
 
 body,
