@@ -107,6 +107,10 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
 }
 
 @media (width < 768px) {
+    .container-txt {
+        margin: 1em;
+    }
+
     .container-lien h1 {
         font-size: 12vw;
         /* font-size: clamp(3.5em, 3.5em, 5em); */
