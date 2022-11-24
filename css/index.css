@@ -146,7 +146,7 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
     }
 
     .container-lien h1 {
-        font-size: 15vh;
+        font-size: 9.9em;
         /*font-size: clamp(6em, 7em, 9em);*/
     }
 }
