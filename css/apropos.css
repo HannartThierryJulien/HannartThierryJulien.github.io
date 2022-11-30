@@ -15,7 +15,7 @@ la bleu en bas: #4C5B77
 :root {
     /*https://colorhunt.co/palette/eff7d3cedcc3a7b99e535a3b*/
     --couleur1: #E2DCC8;
-    --couleur2: #0F3D3E;
+    --couleur2: #4C5B77;
     --couleur3: #100F0F;
     --couleur4: #F1F1F1;
     --font1: 'Nanum Myeongjo', serif;
@@ -27,14 +27,9 @@ html {
     width: 100%;
 }
 
-html {
-    background-color: var(--couleur2);
+body {
+    background-color: var(--couleur1) !important;
 }
-
-.aPropos {
-    background-color: var(--couleur2);
-}
-
 
 
 /*********************
@@ -45,13 +40,13 @@ html {
     padding-left: 0 !important;
     padding-right: 0 !important;
     position: static;
-    
+
 }
 
 #navBarPerso a {
     font-family: var(--font1);
-    background-color: var(--couleur2);
-    color: var(--couleur1) !important;
+    background-color: var(--couleur1);
+    color: var(--couleur2) !important;
     text-transform: uppercase;
     font-weight: 900 !important;
     display: flex;
@@ -65,7 +60,7 @@ html {
     margin-left: 1rem;
     height: 2px;
     width: 100px;
-    background-color: var(--couleur1);
+    background-color: var(--couleur2);
 }
 
 
@@ -77,67 +72,45 @@ html {
 
 p {
     text-align: center;
-    font-size: 1.25em;
-    color: var(--couleur1);
-    
+    font-size: 1em;
+    color: var(--couleur2);
+
 }
 
-.row{
-    
+/* 
+.row {
+
     text-align: center;
     margin-bottom: 1em;
 }
-
+*/
 h4 {
-    color: var(--couleur1) !important;
+    color: var(--couleur2) !important;
     text-transform: uppercase;
     font-weight: 550 !important;
     text-align: center;
 }
 
-/* .testTexte {
-    z-index: -1;
+.section-titres h4 {
+    color: var(--couleur1) !important;
+    background-color: var(--couleur2);
+    width: fit-content;
+    border-radius: 2px;
 }
 
-.test:hover .testTexte {
-    z-index: 0;
+.container-competences,
+.container-experiences,
+.container-formations {
+    border: 2px solid var(--couleur2);
+    border-radius: 2px;
 }
 
-.testTitre {
-    z-index: 0;
-}
+@media (width < 768px) {
 
-.test:hover .testTitre {
-    z-index: -1;
-}
-*/
-
-.card{
-    background-color: var(--couleur2) !important;
-    border: 2px solid var(--couleur1) !important;
-}
-
-.test1, .test2 {
-    position: absolute!important;
-    width: 100%!important;
-    height: 100%!important;
-    -webkit-backface-visibility: hidden!important;
-    backface-visibility: hidden!important;
-}
-
-.test1{
-    
-    z-index: 1;
-}
-
-.test2{
-    z-index: 2;
-}
-
-.test:hover .testBis {
-    transform: rotateY(180deg)!important;
-}
-
-.testBis {
-    position: relative;
+    .section-competences,
+    .section-experiences,
+    .section-formations {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
 }
