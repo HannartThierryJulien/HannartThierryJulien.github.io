@@ -27,6 +27,10 @@ html {
     width: 100%;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--couleur1) !important;
 }
@@ -94,8 +98,15 @@ h4 {
 .section-titres h4 {
     color: var(--couleur1) !important;
     background-color: var(--couleur2);
-    width: fit-content;
+    /* width: fit-content; */
     border-radius: 2px;
+    padding: 1em;
+}
+
+.section-titres h4:hover {
+    color: var(--couleur2) !important;
+    background-color: var(--couleur1);
+    border: 2px solid var(--couleur2);
 }
 
 .container-competences,
@@ -105,12 +116,42 @@ h4 {
     border-radius: 2px;
 }
 
+.section-titres .grid-titres {
+    display: grid;
+    grid-auto-columns: min-content !important;
+}
+
+.section-titres a {
+    text-decoration: none !important;
+}
+
 @media (width < 768px) {
+    .section-titres h4 {
+        font-size: clamp(3vw, 3vw, 3vw);
+    }
 
     .section-competences,
     .section-experiences,
     .section-formations {
         padding-left: 0.5em;
         padding-right: 0.5em;
+    }
+}
+
+@media (width >=768px) {
+    .section-titres h4 {
+        font-size: clamp(3vw, 3vw, 3vw);
+    }
+}
+
+@media (width >=992px) {
+    .section-titres h4 {
+        font-size: clamp(3vw, 3vw, 3vw);
+    }
+}
+
+@media (width >=1200px) {
+    .section-titres h4 {
+        font-size: clamp(2vw, 2vw, 2vw);
     }
 }
