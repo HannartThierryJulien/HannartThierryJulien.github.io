@@ -155,3 +155,33 @@ h4 {
         font-size: clamp(2vw, 2vw, 2vw);
     }
 }
+
+h5 {
+    text-align: center;
+    margin-bottom: 2em !important;
+    color: var(--couleur2);
+    text-transform: uppercase;
+}
+
+/*
+<div class="txt-left-line"></div>
+<div class="txt-bottom-line"></div>
+.txt-left-line:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50%;
+    width: 0;
+    border-left: 2px solid var(--couleur2);
+}
+.txt-bottom-line:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 50%;
+    border-bottom: 2px solid var(--couleur2);
+}
+*/
