@@ -80,6 +80,7 @@ body {
 #projet-accueil h1 {
     text-transform: uppercase !important;
     color: var(--couleur1);
+    text-align: center;
 }
 
 @media (width < 768px) {
@@ -105,6 +106,7 @@ body {
 
 #projet-description p {
     color: var(--couleur2);
+    text-align: justify;
 }
 
 /****************************************
