@@ -6,19 +6,22 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
 */
 
 
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&display=swap');
+'Josefin Slab', serif; */
 
-/*
-là un peu verte au milieu: #436871
-la bleu en bas: #4C5B77
-*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
+
 :root {
     /*https://colorhunt.co/palette/eff7d3cedcc3a7b99e535a3b*/
     --couleur1: #E2DCC8;
     --couleur2: #4C5B77;
     --couleur3: #100F0F;
     --couleur4: #F1F1F1;
-    --font1: 'Nanum Myeongjo', serif;
+    --font1: 'Cormorant', serif;
+    --font2: 'Merriweather', serif;
+                                                
 }
 
 body,
@@ -78,7 +81,7 @@ p {
     text-align: center;
     font-size: 1em;
     color: var(--couleur2);
-
+    font-family: var(--font2);
 }
 
 /* 
@@ -90,6 +93,7 @@ p {
 */
 h4 {
     color: var(--couleur2) !important;
+    font-family: var(--font1);
     text-transform: uppercase;
     font-weight: 550 !important;
     text-align: center;
@@ -97,6 +101,7 @@ h4 {
 
 .section-titres h4 {
     color: var(--couleur1) !important;
+    font-family: var(--font1);
     background-color: var(--couleur2);
     /* width: fit-content; */
     border-radius: 2px;
@@ -123,6 +128,7 @@ h4 {
 
 .section-titres a {
     text-decoration: none !important;
+    font-family: var(--font1);
 }
 
 @media (width < 768px) {
@@ -160,28 +166,6 @@ h5 {
     text-align: center;
     margin-bottom: 2em !important;
     color: var(--couleur2);
+    font-family: var(--font2);
     text-transform: uppercase;
 }
-
-/*
-<div class="txt-left-line"></div>
-<div class="txt-bottom-line"></div>
-.txt-left-line:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 50%;
-    width: 0;
-    border-left: 2px solid var(--couleur2);
-}
-.txt-bottom-line:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 0;
-    width: 50%;
-    border-bottom: 2px solid var(--couleur2);
-}
-*/

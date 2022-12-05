@@ -5,8 +5,11 @@ md (for small laptops - screens equal to or greater than 992px wide)
 lg (for laptops and desktops - screens equal to or greater than 1200px wide)
 */
 
+/* @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&display=swap');
+'Josefin Slab', serif; */
 
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
 
 
 :root {
@@ -15,7 +18,9 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
     --couleur2: #4C5B77;
     --couleur3: #100F0F;
     --couleur4: #F1F1F1;
-    --font1: 'Nanum Myeongjo', serif;
+    --font1: 'Cormorant', serif;
+    --font2: 'Merriweather', serif;
+                                                
 }
 
 .accueil {
@@ -89,12 +94,16 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
     color: var(--couleur2) !important;
     text-transform: uppercase;
     font-weight: 550 !important;
+    font-family: var(--font2);
+}
+
+.container-txt p {
+    font-family: var(--font2);
 }
 
 .container-lien h1 a {
     color: var(--couleur2) !important;
     text-transform: uppercase;
-    font-weight: 550 !important;
     padding-left: 0;
 }
 
