@@ -125,16 +125,32 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
         font-size: 12vw;
         /* font-size: clamp(3.5em, 3.5em, 5em); */
     }
+
+    .container-txt h4 {
+        font-size: 1.25rem;
+    }
+
+    .container-txt p {
+        font-size: 0.7em;
+    }
 }
 
 @media (width >=768px) {
     .container-txt {
-        bottom: -10em;
+        bottom: -8em;
     }
 
     .container-lien h1 {
         font-size: 8vw;
         /* font-size: clamp(4em, 4.5em, 5em); */
+    }
+
+    .container-txt h4 {
+        font-size: 3.8vh;
+    }
+
+    .container-txt p {
+        font-size: 2.5vh;
     }
 }
 
@@ -147,6 +163,14 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
         font-size: 15vh;
         /*font-size: clamp(6em, 7em, 9em);*/
     }
+
+    .container-txt h4 {
+        font-size: 4vh;
+    }
+
+    .container-txt p {
+        font-size: 2.7vh;
+    }
 }
 
 @media (width >=1200px) {
@@ -157,5 +181,13 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
     .container-lien h1 {
         font-size: 9.9em;
         /*font-size: clamp(6em, 7em, 9em);*/
+    }
+
+    .container-txt h4 {
+        font-size: 1.5em;
+    }
+
+    .container-txt p {
+        font-size: 1em;
     }
 }

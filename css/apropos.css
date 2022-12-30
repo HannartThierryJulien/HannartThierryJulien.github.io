@@ -21,7 +21,7 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
     --couleur4: #F1F1F1;
     --font1: 'Cormorant', serif;
     --font2: 'Merriweather', serif;
-                                                
+
 }
 
 body,
@@ -55,7 +55,7 @@ body {
 
 p {
     text-align: center;
-    font-size: 1em;
+    /*font-size: 1em;*/
     color: var(--couleur2);
     font-family: var(--font2);
 }
@@ -119,6 +119,17 @@ h4 {
         padding-left: 0.5em;
         padding-right: 0.5em;
     }
+
+    h5 {
+        font-size: 0.7em;
+    }
+
+    p {
+        font-size: 0.7em;
+        margin-block-start: 0.8em !important;
+        margin-block-end: 0.8em !important;
+    }
+    
 }
 
 @media (width >=768px) {
