@@ -35,6 +35,7 @@ html {
 .projets {
     background-color: var(--couleur2);
     margin-top: 1px !important;
+    margin: 0 auto;
 }
 
 .projets {
