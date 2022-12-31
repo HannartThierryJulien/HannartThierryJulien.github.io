@@ -45,7 +45,7 @@ html {
 *********************/
 
 #navBarPerso.container-fluid {
-    position: fixed !important;
+    /*position: fixed !important;*/
 }
 
 #navBarPerso a {
