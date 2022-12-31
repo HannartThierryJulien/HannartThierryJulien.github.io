@@ -1,12 +1,8 @@
 #navBarPerso.container-fluid {
     padding-left: 0 !important;
     padding-right: 0 !important;
-    /*position: fixed; /*position: static;*/
-}
-
-#navBarPerso.container-fluid {
-    height: 50px !important;
-    top: 0 !important;
+    height: 50px; /* définissez la hauteur de la barre de navigation ici */
+    /* supprimez la propriété "position: fixed" */
   }
 
 #navBarPerso a {
