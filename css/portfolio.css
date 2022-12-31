@@ -28,14 +28,13 @@ body,
 html {
     margin: 0;
     width: 100%;
+    background-color: var(--couleur2) !important;
 }
 
-html {
-    background-color: var(--couleur2);
-}
 
 .projets {
     background-color: var(--couleur2);
+    margin-top: 50px !important;
 }
 
 
