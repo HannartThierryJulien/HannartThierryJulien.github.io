@@ -21,9 +21,8 @@
       <h1>Contact</h1>
       <br>
       <h2 id="email">tjhannart1@gmail.com</h2>
-      <div id="notification"></div>
       <h2>
-        <a href="https://www.linkedin.com/in/thierry-julien-hannart-76a113256/" class="nav-link">Linkedin</a>
+        <a href="https://www.linkedin.com/in/thierry-julien-hannart-76a113256/" class="nav-link">LinkedIn</a>
         |
         <a href="https://github.com/HannartThierryJulien" class="nav-link">Github</a>
       </h2>
@@ -39,24 +38,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
-  <script>
-    // Récupération de l'élément h2 contenant l'adresse e-mail
-    const emailElement = document.getElementById('email');
-    // Récupération de l'élément div qui affichera le message de notification
-    const notificationElement = document.getElementById('notification');
-
-    // Ajout d'un événement click à l'élément h2
-    emailElement.addEventListener('click', () => {
-      // Récupération du texte de l'élément h2
-      const email = emailElement.textContent;
-
-      // Copie du texte dans le presse-papiers de l'utilisateur
-      navigator.clipboard.writeText(email).then(() => {
-        // Si la copie a réussi, affichage d'un message de notification
-        notificationElement.textContent = 'Adresse e-mail copiée !';
-      });
-    });
-  </script>
 </body>
 
 </html>

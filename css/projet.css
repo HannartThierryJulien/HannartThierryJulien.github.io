@@ -28,15 +28,15 @@ body,
 html {
     margin: 0;
     width: 100%;
+    background-color: var(--couleur1) !important;
 }
 
 html {
     scroll-behavior: smooth;
-    padding: 2px;
 }
 
 body {
-    background-color: var(--couleur1) !important;
+    padding: 2px;
 }
 
 /*********************

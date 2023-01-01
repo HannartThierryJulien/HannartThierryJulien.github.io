@@ -23,11 +23,11 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
                                                 
 }
 
-.accueil {
-    background-color: var(--couleur1);
+html, body {
+    background-color: var(--couleur1) !important;
 }
 
-html {
+body {
     padding: 2px;
 }
 

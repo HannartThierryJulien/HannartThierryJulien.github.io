@@ -27,7 +27,7 @@ html, body {
     background-color: var(--couleur1) !important;
 }
 
-html {
+body {
     padding: 2px;
 }
 
