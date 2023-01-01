@@ -32,6 +32,7 @@ html {
 
 html {
     scroll-behavior: smooth;
+    padding: 2px;
 }
 
 body {

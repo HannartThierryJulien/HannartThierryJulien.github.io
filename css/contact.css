@@ -23,8 +23,8 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
                                                 
 }
 
-.contact {
-    background-color: var(--couleur1);
+html, body {
+    background-color: var(--couleur1) !important;
 }
 
 
