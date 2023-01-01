@@ -27,6 +27,10 @@ lg (for laptops and desktops - screens equal to or greater than 1200px wide)
     background-color: var(--couleur1);
 }
 
+html {
+    padding: 2px;
+}
+
 
 
 /*********************
