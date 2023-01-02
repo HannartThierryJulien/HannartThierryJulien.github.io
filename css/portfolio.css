@@ -38,7 +38,7 @@ body {
 
 .projets {
     background-color: var(--couleur2);
-    margin-top: 2px !important;
+    margin-top: 1rem !important;
     height: calc(100vh - 50px);
 }
 
