@@ -38,8 +38,8 @@ body {
 
 .projets {
     background-color: var(--couleur2);
-    margin-top: 1rem !important;
-    height: calc(100vh - 50px - 1rem - 4px); /*hauteur de l'écran - hauteur navBar - marginTop de .projets - paddingTopEtBottom de body*/
+    margin-top: 2rem !important;
+    height: calc(100vh - 50px - 2rem - 4px); /*hauteur de l'écran - hauteur navBar - marginTop de .projets - paddingTopEtBottom de body*/
 }
 
 
