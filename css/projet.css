@@ -129,5 +129,12 @@ body {
 ****************************************/
 #projet-images img {
     margin-top: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
+}
+
+#projet-images p {
+    color: var(--couleur2);
+    font-family: var(--font2);
+    text-align: center;
+    font-style: italic;
 }
