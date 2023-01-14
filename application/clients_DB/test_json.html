@@ -1,0 +1,44 @@
+<!--https://www.youtube.com/watch?v=BOITPwChVP4-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Test Firebase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <Style>
+    label {
+      display: inline-block;
+      width: 80px;
+    }
+
+    input,
+    select {
+      width: 120px;
+    }
+  </Style>
+</head>
+
+<body>
+  <label>Id</label> <input id="champId" type="text"> <br><br>
+  <label>Nom</label> <input id="champNom" type="text"> <br><br>
+  <label>Prenom</label> <input id="champPrenom" type="text"> <br><br>
+  <label>Adresse</label> <input id="champAdresse" type="text"> <br><br>
+  <label>Description</label> <input id="champDescription" type="text"> <br><br>
+
+  <hr>
+  <button id="Insbtn">Insert</button>
+  <button id="Selbtn">Select</button>
+  <button id="SelAllbtn">Select All</button>
+  <button id="Updbtn">Update</button>
+  <button id="Delbtn">Delete</button>
+
+  <hr>
+  <div id="listeClients"></div>
+
+  <script type="module" src="test_json.js"></script>
+
+</body>
+
+</html>
