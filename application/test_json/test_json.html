@@ -1,0 +1,48 @@
+<!--https://www.youtube.com/watch?v=BOITPwChVP4-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Test Firebase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <Style>
+    label {
+      display: inline-block;
+      width: 80px;
+    }
+
+    input,
+    select {
+      width: 120px;
+    }
+  </Style>
+</head>
+
+<body>
+
+  <label>Name</label> <input id="Namebox" type="text"> <br><br>
+  <label>Rollno</label> <input id="Rollbox" type="text"> <br><br>
+  <label>Section</label> <input id="Secbox" type="text"> <br><br>
+  <label>Gender</label>
+  <select id="Genbox">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select>
+
+  <hr>
+  <button id="Insbtn">Insert</button>
+  <button id="Selbtn">Select</button>
+  <button id="SelAllbtn">Select All</button>
+  <button id="Updbtn">Update</button>
+  <button id="Delbtn">Delete</button>
+
+  <hr>
+  <div id="studentList"></div>
+
+  <script type="module" src="test_json.js"></script>
+
+</body>
+
+</html>
