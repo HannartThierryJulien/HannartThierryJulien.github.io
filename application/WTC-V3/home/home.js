@@ -1,4 +1,6 @@
 
+import { Prestation } from "../javascript/classes/classePrestation.js";
+
 
 /***********************************************************************************************/
 // Import de la base de données FireBase
@@ -31,66 +33,6 @@ const analytics = getAnalytics(app);
 import { getDatabase, ref, get, set, child, update, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const db = getDatabase();
-
-
-/***********************************************************************************************/
-// Classe Prestation
-/***********************************************************************************************/
-
-
-class Prestation {
-    constructor() {
-        this.id = 0;
-        this.idClient = 0;
-        this.duree = 0;
-        this.tarif = 0;
-        this.description = "";
-    }
-
-    setId(id) {
-        this.id = id;
-    }
-
-    getId() {
-        return this.id;
-    }
-
-    setIdClient(idClient) {
-        this.idClient = idClient;
-    }
-
-    getIdClient() {
-        return this.idClient;
-    }
-
-    setDuree(duree) {
-        this.duree = duree;
-    }
-
-    getDuree() {
-        return this.duree;
-    }
-
-    setTarif(tarif) {
-        this.tarif = tarif;
-    }
-
-    getTarif() {
-        return this.tarif;
-    }
-
-    setDescription(description) {
-        this.description = description;
-    }
-
-    getDescription() {
-        return this.description;
-    }
-
-    toString() {
-        return (this.id + " " + this.idClient + " " + this.duree + " " + this.tarif + " " + this.description);
-    }
-}
 
 
 /***********************************************************************************************/
@@ -154,7 +96,7 @@ function pauseTimer() {
 }
 
 function stopTimer() {
-    dureePrestation = hour + ":" + minute + ":" + second + ":" + count;
+    dureePrestation = document.getElementById('hr').innerHTML + ":" + document.getElementById('min').innerHTML + ":" + document.getElementById('sec').innerHTML + ":" + document.getElementById('count').innerHTML;
     timer = false;
     hour = 0;
     minute = 0;
@@ -241,8 +183,11 @@ function compterNbrPrestationsDansDB() {
 
 function enregistrerPrestation() {
     var prestation = new Prestation();
-    prestation.setId("3");
-    prestation.setIdClient(0);
+    
+    var cbClients = document.getElementById("comboBoxClients");
+    var selectedIndex = cbClients.selectedIndex;
+    prestation.setIdClient(cbClients.options[selectedIndex].id);
+
     prestation.setDuree(dureePrestation);
     prestation.setTarif(15);
     prestation.setDescription(document.getElementById("descriptionPrestation").value);
@@ -256,11 +201,7 @@ function enregistrerPrestation() {
 /***********************************************************************************************/
 
 
-function insererPrestationDansDB(prestation) {
-    //ya un soucis dans les lignes en dessous, elles devraient permettre de décortiquer le nom et le prenom
-    var cbClients = document.getElementById("comboBoxClients");
-    var selectedIndex = cbClients.selectedIndex;
-    prestation.setIdClient(cbClients.options[selectedIndex].id);    
+function insererPrestationDansDB(prestation) {   
 
     set(ref(db, "Prestations/" + (nbrPrestations + 1)), {
         id: (nbrPrestations + 1),

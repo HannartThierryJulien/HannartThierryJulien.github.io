@@ -1,50 +1,43 @@
-<!--https://www.youtube.com/watch?v=BOITPwChVP4-->
-
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="UTF-8">
-  <title>Test Firebase</title>
+  <title>Clients - WTC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <Style>
-    label {
-      display: inline-block;
-      width: 80px;
-    }
-
-    input,
-    select {
-      width: 120px;
-    }
-  </Style>
+  <link href="../css/global.css" rel="stylesheet">
 </head>
 
 <body>
-  <ul>
-    <li><a href="../home/home.html">Home</a></li>
-    <li><a href="../client/client.html">Clients</a></li>
-    <li><a href="../prestation/prestation.html">Prestations</a></li>
-    <li><a href="../tarif/tarif.html">Tarifs</a></li>
-  </ul>
+  <a href="../home/home.html">Home</a>
+  <a href="../client/client.html">Clients</a>
+  <a href="../prestation/prestation.html">Prestations</a>
+  <a href="../tarif/tarif.html">Tarifs</a>
 
   <br><br>
+  <hr><br><br>
 
+  <h1>Clients</h1>
 
+  <h3>Ajout, Modification et Suppresion d'un client :</h3>
   <label>Id</label> <input id="champId" type="text"> <br><br>
   <label>Nom</label> <input id="champNom" type="text"> <br><br>
   <label>Prenom</label> <input id="champPrenom" type="text"> <br><br>
   <label>Adresse</label> <input id="champAdresse" type="text"> <br><br>
   <label>Description</label> <input id="champDescription" type="text"> <br><br>
 
-  <hr>
+  <br>
+
   <button id="Insbtn">Insert</button>
   <button id="Selbtn">Select</button>
   <button id="SelAllbtn">Select All</button>
   <button id="Updbtn">Update</button>
   <button id="Delbtn">Delete</button>
 
-  <hr>
+  <br><br>
+  <hr><br><br>
+
+  <h3>Listes des clients enregistrés :</h3>
   <div id="listeClients"></div>
 
   <script type="module" src="client.js"></script>

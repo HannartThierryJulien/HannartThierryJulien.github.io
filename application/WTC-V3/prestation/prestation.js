@@ -1,31 +1,4 @@
-class Tarif {
-  constructor() {
-    this.id = 0;
-    this.nom = "";
-    this.description = "";
-    this.montantParHeure = 0;
-  }
-
-  setId(id) {
-    this.id = id;
-  }
-
-  setNom(nom) {
-    this.nom = nom;
-  }
-
-  setDescription(description) {
-    this.description = description;
-  }
-
-  setTarif(montantParHeure) {
-    this.montantParHeure = montantParHeure;
-  }
-
-  toString() {
-    return (this.id + " " + this.nom + " " + this.description + " " + this.montantParHeure);
-  }
-}
+import { Prestation } from "../javascript/classes/classePrestation.js";
 
 /*****************************************************************************
  ****************************************************************************/
@@ -60,9 +33,10 @@ const db = getDatabase();
 //-------------------- References ----------------------------------------------------------
 
 var champId = document.getElementById("champId");
-var champNom = document.getElementById("champNom");
+var champIdClient = document.getElementById("champIdClient");
+var champDuree = document.getElementById("champDuree");
+var champTarif = document.getElementById("champTarif");
 var champDescription = document.getElementById("champDescription");
-var champMontantParHeure = document.getElementById("champMontantParHeure");
 
 var insBtn = document.getElementById("Insbtn");
 var selBtn = document.getElementById("Selbtn");
@@ -73,11 +47,12 @@ var delBtn = document.getElementById("Delbtn");
 //-------------------- INSERT DATA FUNCTION ----------------------------------------------------------
 
 function InsertData() {
-  set(ref(db, "Tarifs/" + champId.value), {
+  set(ref(db, "Prestations/" + champId.value), {
     id: champId.value,
-    nom: champNom.value,
-    description: champDescription.value,
-    montantParHeure: champMontantParHeure.value
+    idClient: champIdClient.value,
+    duree: champDuree.value,
+    tarif: champTarif.value,
+    description: champDescription.value
   })
     .then(() => {
       alert("data stored successfully");
@@ -85,6 +60,8 @@ function InsertData() {
     .catch((error) => {
       alert("unsuccessful, error" + error);
     });
+
+  getAllPrestations();
 }
 
 //-------------------- SELECT DATA FUNCTION ----------------------------------------------------------
@@ -92,12 +69,13 @@ function InsertData() {
 function SelectData() {
   const dbref = ref(db);
 
-  get(child(dbref, "Tarifs/" + champId.value)).then((snapshot) => {
+  get(child(dbref, "Prestations/" + champId.value)).then((snapshot) => {
     if (snapshot.exists()) {
       champId.value = snapshot.val().id;
-      champNom.value = snapshot.val().nom;
+      champIdClient.value = snapshot.val().idClient;
+      champDuree.value = snapshot.val().duree;
+      champTarif.value = snapshot.val().tarif;
       champDescription.value = snapshot.val().description;
-      champMontantParHeure.value = snapshot.val().montantParHeure;
     }
 
     else {
@@ -114,10 +92,14 @@ function SelectAllData() {
 
   const dbref = ref(db);
 
-  get(child(dbref, "Tarifs"))
+  get(child(dbref, "Prestations"))
     .then((snapshot) => {
+
+      var prestations = [];
+
       snapshot.forEach(childSnapshot => {
-        console.log("\n" + childSnapshot.val().nom+ " " + childSnapshot.val().montantParHeure);
+        console.log("\n" + childSnapshot.val().nomClient + " " + childSnapshot.val().duree);
+        prestations.push(childSnapshot.val());
       });
 
     });
@@ -126,11 +108,12 @@ function SelectAllData() {
 //-------------------- UPDATE DATA FUNCTION ----------------------------------------------------------
 
 function UpdateData() {
-  update(ref(db, "Tarifs/" + champId.value), {
+  update(ref(db, "Prestations/" + champId.value), {
     id: champId.value,
-    nom: champNom.value,
-    description: champDescription.value,
-    montantParHeure: champMontantParHeure.value
+    idClient: champIdClient.value,
+    duree: champDuree.value,
+    tarif: champTarif.value,
+    description: champDescription.value
   })
     .then(() => {
       alert("data updated successfully");
@@ -138,24 +121,90 @@ function UpdateData() {
     .catch((error) => {
       alert("unsuccessful, error" + error);
     });
+
+  getAllPrestations();
 }
 
 //-------------------- DELETE DATA FUNCTION ----------------------------------------------------------
 
 function DeleteData() {
-  remove(ref(db, "Tarifs/" + champId.value))
+  remove(ref(db, "Prestations/" + champId.value))
     .then(() => {
       alert("data removed successfully");
     })
     .catch((error) => {
       alert("unsuccessful, error" + error);
     });
+
+  getAllPrestations();
 }
 
-//-------------------- Assign Events to Btns ----------------------------------------------------------
+
+/*****************************************************************************
+//
+*****************************************************************************/
+
+
+function getAllPrestations() {
+
+  const dbref = ref(db);
+
+  get(child(dbref, "Prestations"))
+    .then((snapshot) => {
+      var liste = document.getElementById("listePrestations");
+      liste.innerHTML = ""; //vider la div
+      var table = document.createElement("table");
+      var header = table.createTHead();
+      var row = header.insertRow();
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+      var cell5 = row.insertCell(4);
+      cell1.innerHTML = "Id";
+      cell2.innerHTML = "id du client";
+      cell3.innerHTML = "Durée";
+      cell4.innerHTML = "Tarif";
+      cell5.innerHTML = "Description";
+
+      snapshot.forEach(childSnapshot => {
+
+        let prestation = new Prestation();
+        prestation.setId(childSnapshot.val().id);
+        prestation.setIdClient(childSnapshot.val().idClient);
+        prestation.setDuree(childSnapshot.val().duree);
+        prestation.setTarif(childSnapshot.val().tarif);
+        prestation.setDescription(childSnapshot.val().description);
+
+        var row = table.insertRow();
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        cell1.innerHTML = prestation.getId();
+        cell2.innerHTML = prestation.getIdClient();
+        cell3.innerHTML = prestation.getDuree();
+        cell4.innerHTML = prestation.getTarif();
+        cell5.innerHTML = prestation.getDescription();
+
+      });
+
+      liste.appendChild(table);
+
+    });
+}
+
+
+
+/*****************************************************************************
+//
+*****************************************************************************/
+
 
 insBtn.addEventListener('click', InsertData);
 selBtn.addEventListener('click', SelectData);
 selAllBtn.addEventListener("click", SelectAllData);
 updBtn.addEventListener('click', UpdateData);
 delBtn.addEventListener('click', DeleteData);
+getAllPrestations();
