@@ -1,0 +1,19 @@
+version: latest
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "2222:80"
+    volumes:
+      - ./:/usr/share/nginx/html
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.projetrh.rule=Host(`tjhannart.dev`)"
+      - "traefik.http.routers.projetrh.entrypoints=websecure"
+    networks:
+      - traefik-network
+
+networks:
+  traefik-network:
+    external: true
